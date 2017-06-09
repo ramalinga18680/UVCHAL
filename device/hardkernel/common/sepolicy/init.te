@@ -1,0 +1,64 @@
+allow init self:capability { sys_module };
+# add system_control service
+domain_trans(init, system_control_exec, system_control)
+domain_auto_trans(init, system_control_exec, system_server)
+
+#allow init imageserver_service:service_manager add;
+domain_trans(init, imageserver_exec, imageserver)
+
+allow init fuse:file { open read write };
+allow init fuse:dir search;
+
+#allow tvserver service
+domain_trans(init, tvserver_exec, tvserver)
+domain_auto_trans(init, tvserver_exec, tvserver)
+
+domain_trans(init, make_ext4fs_exec, make_ext4fs)
+
+domain_trans(init, hdcp_tx22_exec, hdcp_tx22)
+
+
+#allow usbpm service
+domain_trans(init, usbpm_exec, usbpm)
+domain_auto_trans(init, usbpm_exec, usbpm)
+
+allow init property_socket:sock_file write;
+allow param_tv_device rootfs:filesystem { associate };
+
+allow init vfat:dir rw_dir_perms;
+allow init vfat:file create_file_perms;
+#allow init init_shell:process { signull signal };
+
+allow init init:tcp_socket create_stream_socket_perms;
+allow init port:tcp_socket name_bind;
+allow init node:tcp_socket node_bind;
+allow init shell_data_file:file create_file_perms;
+allow init shell_data_file:dir rw_dir_perms;
+allow init kernel:system {syslog_read module_request};
+allow init tmpfs:lnk_file {create_file_perms};
+allow init block_device:blk_file rw_file_perms;
+allow init socket_device:sock_file create_file_perms;
+allow init devpts:chr_file r_file_perms;
+allow init env_device:blk_file rw_file_perms;
+allow init env_device:chr_file { getattr read write open };
+allow init functionfs:file mounton;
+allow init functionfs:dir mounton;
+allow init drm_device:chr_file {setattr read write open ioctl};
+allow init system_data_file:file {link};
+allow init debugfs:dir mounton;
+allow init userdata_block_device:blk_file rw_file_perms;
+allow init cache_block_device:blk_file rw_file_perms;
+
+recovery_only(`
+  domain_trans(init, rootfs, shell)
+  domain_trans(init, rootfs, adbd)
+')
+
+
+allow init kmsg_device:chr_file rw_file_perms;
+allow init device:chr_file { setattr read write open ioctl create };
+
+allow init property_socket:sock_file write;
+allow init self:netlink_kobject_uevent_socket { create read write };
+
+allow init param_block_device:blk_file { getattr read write open };

@@ -1,0 +1,7 @@
+allow servicemanager init:dir search;
+allow servicemanager init:file { read open };
+allow servicemanager init:process getattr;
+
+allow servicemanager system_control:dir r_dir_perms;
+allow servicemanager system_control:file r_file_perms;
+

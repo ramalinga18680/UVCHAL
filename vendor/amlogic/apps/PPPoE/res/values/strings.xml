@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PPPoE</string>
+    <string name="network_interface_list">Network interfaces:</string>    
+    <string name="menu_cancel">Discard</string>
+    <string name="pppoe_conf_perf_title">Pppoe Configure</string>
+    <string name="pppoe_config_title">Configure Pppoe</string>
+    <string name="pppoe_user_name">User name</string>
+    <string name="pppoe_passwd">Password</string>
+    <string name="pppoe_dial">Dial</string>
+    <string name="pppoe_disconnect">Disconnect</string>
+    <string name="pppoe_dial_waiting_msg">Please wait for dial...</string>
+    <string name="pppoe_hangup_waiting_msg">Please wait for hangup...</string>
+    <string name="pppoe_conf_summary">Configure dial</string>
+    <string name="pppoe_connect_ok">Connect Ok!</string>
+    <string name="pppoe_connect_failed">Connect failed</string>
+    <string name="pppoe_connect_failed_server_no_response">NO Response</string>
+    <string name="pppoe_connect_failed_auth">Invalid username or password</string>    
+    <string name="pppoe_disconnect_ok">Disconnect OK!</string>
+    <string name="pppoe_disconnect_failed">Disconnect failed!</string>
+    <string name="pppoe_ppp_interface_occupied">ppp interface occupied!</string>
+    <string name="amlogic_ok">OK</string>
+    <string name="pppoe_auto_dial">Auto Dial on Reboot</string>
+    <string name="please_insert_the_cable">Please insert the cable</string>
+</resources>

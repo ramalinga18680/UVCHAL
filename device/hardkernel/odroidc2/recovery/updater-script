@@ -1,0 +1,33 @@
+#assert(getprop("ro.build.product" == "odroidc2"));
+
+show_progress(1.0000, 0);
+
+ui_print("\n\nHardkernel's ODROID-C2 Android Update is started...");
+set_progress(0.1000);
+
+ui_print("   'system' partition is flashing...");
+write_sparse_image("rootsystem.img", "system", "/dev/block/mmcblk0p2");
+
+set_progress(0.4000);
+
+ui_print("   formatting /dev/block/mmcblk0p4 for ext4 partition");
+run_program("/bin/mk_e2fs", "-F", "-t", "ext4", "/dev/block/mmcblk0p4");
+
+set_progress(0.5000);
+
+ui_print("   formatting /dev/block/mmcblk0p1 for VFAT partition");
+run_program("/bin/mkfs.vfat", "-n", "VFAT", "/dev/block/mmcblk0p1");
+
+set_progress(0.9000);
+
+ui_print("   boot.ini is copying to FAT partition");
+mount("vfat", "EMMC", "/dev/block/mmcblk0p1", "/sdcard");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p2", "/system");
+run_program("/bin/cp", "/system/etc/boot.ini.template", "/sdcard/boot.ini");
+run_program("/bin/cp", "/system/etc/hardkernel-720.bmp.gz", "/sdcard/boot-logo.bmp.gz");
+run_program("/bin/cp", "/system/etc/Image", "/sdcard/Image");
+unmount("/system");
+unmount("/sdcard");
+
+ui_print("Self installation is completed.\nHave fun with ODROID-C!\n\n");
+set_progress(1.0000);

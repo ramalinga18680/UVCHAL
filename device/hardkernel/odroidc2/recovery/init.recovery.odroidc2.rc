@@ -1,0 +1,11 @@
+on early-init
+    insmod /boot/dwc_otg.ko
+
+on init
+
+on fs
+
+on boot
+service console /sbin/sh
+    seclabel u:r:shell:s0
+    console

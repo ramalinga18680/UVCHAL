@@ -1,0 +1,8 @@
+type modem_dongle_d, domain;
+type modem_dongle_d_exec, exec_type, file_type;
+
+init_daemon_domain(modem_dongle_d)
+
+allow modem_dongle_d self:netlink_kobject_uevent_socket create_socket_perms;
+allow modem_dongle_d shell_exec:file rx_file_perms;
+allow modem_dongle_d device:dir { open read };

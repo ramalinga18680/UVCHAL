@@ -1,0 +1,12 @@
+type wlan_fwloader, domain;
+type wlan_fwloader_exec, exec_type, file_type;
+
+init_daemon_domain(wlan_fwloader)
+
+allow wlan_fwloader init:unix_stream_socket connectto;
+allow wlan_fwloader kernel:system module_request;
+allow wlan_fwloader property_socket:sock_file write;
+allow wlan_fwloader self:capability { net_admin net_raw sys_module };
+allow wlan_fwloader self:udp_socket { create ioctl };
+allow wlan_fwloader system_prop:property_service set;
+

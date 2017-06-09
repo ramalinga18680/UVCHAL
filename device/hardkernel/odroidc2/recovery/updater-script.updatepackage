@@ -1,0 +1,50 @@
+#assert(getprop("ro.build.product" == "odroidc2"));
+
+show_progress(1.0000, 0);
+
+ui_print("\n\nHardkernel's ODROID-C2 Android Update is started...");
+set_progress(0.1000);
+
+ui_print("   Linux kernel image is flashing...");
+package_extract_file("Image", "/tmp/Image");
+run_program("/bin/dd", "if=/tmp/Image", "of=/dev/block/mmcblk0", "seek=1632");
+
+set_progress(0.2000);
+
+ui_print("   Device tree blob is flashing...");
+package_extract_file("meson64_odroidc2.dtb", "/tmp/meson8b_odroidc.dtb");
+run_program("/bin/dd", "if=/tmp/meson8b_odroidc.dtb", "of=/dev/block/mmcblk0", "seek=1504");
+
+set_progress(0.3000);
+
+ui_print("   U-boot is flashing...");
+package_extract_file("u-boot.bin", "/tmp/u-boot.bin");
+run_program("/bin/dd", "if=/tmp/u-boot.bin", "of=/dev/block/mmcblk0", "seek=97");
+
+set_progress(0.4000);
+
+ui_print("   'recovery' partition is flashing...");
+package_extract_file("recovery.img", "/tmp/recovery.img");
+run_program("/bin/dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0", "seek=34400");
+
+set_progress(0.5000);
+
+ui_print("   'system' partition is extracting...");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p2", "/system");
+package_extract_dir("rootsystem", "/system");
+
+set_progress(0.8000);
+
+ui_print("   boot.ini.template is copying to /system/etc/");
+package_extract_file("system/etc/boot.ini.template", "/system/etc/boot.ini.template");
+
+ui_print("   Image is copying to /sdcard/");
+mount("vfat", "EMMC", "/dev/block/mmcblk0p1", "/sdcard");
+run_program("/bin/cp", "/system/etc/Image", "/sdcard/Image");
+unmount("/sdcard");
+unmount("/system");
+
+set_progress(0.9000);
+
+ui_print("Android update is completed.\nHave fun with ODROID-C2!\n\n");
+set_progress(1.0000);

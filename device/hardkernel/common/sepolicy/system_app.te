@@ -1,0 +1,25 @@
+allow system_app sysfs_lowmemorykiller:file { getattr w_file_perms };
+allow system_app subtitle_service:service_manager add;
+
+#added for atv remote
+allow system_app uhid_device:dir r_dir_perms;
+allow system_app uhid_device:chr_file rw_file_perms;
+
+allow system_app dhcp_data_file:file { r_file_perms };
+allow system_app ppp_system_file:dir { create_dir_perms };
+allow system_app ppp_system_file:file { create_file_perms };
+allow system_app ppp_system_file:sock_file { create_file_perms };
+allow system_app pppoe_wrapper_socket:sock_file { write setattr };
+allow system_app pppoe_wrapper:unix_dgram_socket sendto;
+allow system_app dhcp_data_file:dir { r_dir_perms };
+allow system_app dhcp_data_file:fifo_file { r_file_perms };
+allow system_app system_data_file:dir { add_name create setattr };
+
+#read sub stream
+allow system_app video_device:chr_file { rw_file_perms };
+allow system_app system_app:netlink_kobject_uevent_socket {create bind read};
+allow system_app vold:unix_stream_socket connectto;
+allow system_app pppoe_service:service_manager add;
+allow system_app dig_socket:sock_file write;
+
+allow system_app iso9660:dir { search read open };

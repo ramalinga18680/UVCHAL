@@ -1,0 +1,24 @@
+recovery_only(`
+
+  allow recovery uboot_prop:property_service set;
+  allow recovery rootfs:dir create_dir_perms;
+  allow recovery sysfs:dir mounton;
+  allow recovery debugfs:file r_file_perms;
+  allow recovery init_tmpfs:file create_file_perms;
+
+  allow recovery vfat:dir create_dir_perms;
+  allow recovery vfat:file create_file_perms;
+
+  allow recovery ppp_system_file:file {create_file_perms relabelfrom relabelto};
+  allow recovery ppp_system_file:dir {create_dir_perms relabelfrom relabelto};
+
+  allow recovery env_device:chr_file rw_file_perms;
+  allow recovery input_device:chr_file write;
+  allow recovery property_data_file:dir { search };
+  allow recovery device:dir rw_dir_perms;
+  allow recovery bootloader_device:chr_file rw_file_perms;
+  allow recovery defendkey_device:chr_file rw_file_perms;
+  allow recovery dtb_device:chr_file { open read write };
+  allow recovery aml_display_prop:property_service set;
+  allow recovery kmsg_device:chr_file rw_file_perms;
+')

@@ -1,0 +1,4 @@
+allow fsck param_block_device:blk_file { getattr read write open ioctl };
+allow fsck block_device:blk_file { getattr };
+allow fsck drm_block_device:blk_file { getattr read write };
+allow fsck userdata_block_device:blk_file { getattr read write };

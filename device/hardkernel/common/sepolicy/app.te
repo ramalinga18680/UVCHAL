@@ -1,0 +1,20 @@
+# Write to various pseudo file systems.
+allow untrusted_app block_device:dir { search getattr };
+allow untrusted_app block_device:blk_file { getattr };
+allow untrusted_app imageserver_service:service_manager find;
+
+allow untrusted_app system_control_service:service_manager find;
+
+
+#allow untrusted_app unlabeled:dir { search read write getattr };
+#allow untrusted_app unlabeled:file { lock open read write getattr };
+
+# Read and write /data/data subdirectory.
+allow untrusted_app system_app_data_file:dir create_dir_perms;
+allow untrusted_app { system_app_data_file app_data_file }:dir { getattr read search };
+
+allow untrusted_app system_app_data_file:file create_file_perms;
+allow untrusted_app { system_app_data_file app_data_file }:file { getattr read write };
+
+allow untrusted_app unlabeled:dir r_dir_perms;
+allow untrusted_app unlabeled:file r_file_perms;

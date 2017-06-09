@@ -1,0 +1,63 @@
+type tvserver, domain;
+type tvserver_exec, exec_type, file_type;
+
+type avin_device, dev_type;
+type hdmirx0_device, dev_type;
+type amvideo_device, dev_type;
+
+init_daemon_domain(tvserver)
+
+allow tvserver shell_exec:file rx_file_perms;
+allow tvserver system_file:file execute_no_trans;
+allow tvserver tvserver_service:service_manager add;
+allow tvserver tvserver_exec:file { entrypoint read };
+allow tvserver audio_device:dir  { search };
+allow tvserver audio_device:chr_file  { read write open ioctl };
+allow tvserver video_device:chr_file  { read write open ioctl };
+allow tvserver dvb_device:chr_file { read write open ioctl };
+allow tvserver uio_device:chr_file rw_file_perms;
+allow tvserver block_device:dir search;
+allow tvserver input_device:dir search;
+allow tvserver input_device:chr_file { read write open ioctl };
+allow tvserver sysfs:file write;
+allow tvserver sysfs_xbmc:file { open read write getattr };
+allow tvserver property_socket:sock_file write;
+allow tvserver init:unix_stream_socket connectto;
+allow tvserver mediaserver:fd { use };
+allow tvserver { mediaserver system_app system_control }:binder { call transfer };
+allow mediaserver tvserver:binder { call transfer };
+allow system_app tvserver:binder { call transfer };
+allow system_control tvserver:binder { call transfer };
+allow system_server tvserver:binder { call transfer };
+allow tvserver platform_app:binder { call transfer };
+allow platform_app tvserver:binder { call transfer };
+allow tvserver hci_attach_dev:chr_file { read write open ioctl };
+allow tvserver { ctl_default_prop ctl_bootanim_prop media_prop system_prop uboot_prop powerctl_prop }:property_service set;
+
+allow tvserver self:process execmem;
+allow tvserver self:capability dac_override;
+
+allow tvserver tmpfs:chr_file { read write };
+allow tvserver system_control_service:service_manager find;
+allow tvserver mediaserver_service:service_manager find;
+
+binder_use(tvserver);
+binder_call(tvserver, system_server)
+
+allow tvserver avin_device:chr_file  { read write open };
+allow tvserver hdmirx0_device:chr_file  { read write open };
+allow tvserver amvideo_device:chr_file  { read write open };
+
+allow tvserver param_tv_device:dir  { search read write add_name };
+allow tvserver param_tv_device:file { create open read write getattr lock unlink };
+allow param_tv_device labeledfs:filesystem { associate };
+
+allow tvserver param_tv_device:dir { remove_name rmdir };
+
+allow tvserver param_block_device:blk_file { getattr read write open };
+allow tvserver cri_block_device:blk_file { getattr read write open };
+
+allow tvserver tv_config_prop:property_service set;
+
+allow tvserver sysfs:dir { write };
+allow tvserver self:capability sys_nice;

@@ -1,0 +1,7 @@
+type usbpm, domain;
+type usbpm_exec, exec_type, file_type;
+
+init_daemon_domain(usbpm)
+
+allow usbpm usbpm_exec:file { entrypoint read };
+allow usbpm sysfs:file {write};

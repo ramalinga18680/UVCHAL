@@ -1,0 +1,6 @@
+#device                 mountpoint      fstype  options         flags?    (fstab    version    2)
+/dev/block/mmcblk0p1    /sdcard         vfat    defaults        defaults
+/dev/block/mmcblk0p2    /system         ext4    defaults        defaults
+/dev/block/mmcblk0p3    /cache          ext4    defaults        defaults
+/dev/block/mmcblk0p4    /data           ext4    defaults        defaults
+/dev/block/mmcblk0      /misc           raw     offset=1432     defaults

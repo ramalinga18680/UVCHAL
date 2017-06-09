@@ -1,0 +1,27 @@
+type bootvideo, domain;
+type bootvideo_exec, exec_type, file_type;
+init_daemon_domain(bootvideo)
+binder_use(bootvideo);
+unix_socket_connect(bootvideo, property, init);
+
+#Self
+allow bootvideo self:process execmem;
+allow bootvideo self:capability {dac_override dac_read_search};
+
+#System device
+allow bootvideo video_device:chr_file rw_file_perms;
+allow bootvideo audio_device:dir r_dir_perms;
+allow bootvideo audio_device:chr_file rw_file_perms;
+allow bootvideo uio_device:chr_file rw_file_perms;
+
+#File system and property
+allow bootvideo system_control:binder call;
+allow bootvideo property_socket:property_service set;
+allow bootvideo media_prop:property_service set;
+allow bootvideo property_socket:sock_file write;
+
+#System volume file
+allow bootvideo system_data_file:file open;
+
+allow bootvideo sysfs_xbmc:file { open read write getattr };
+allow bootvideo system_control_service:service_manager find;

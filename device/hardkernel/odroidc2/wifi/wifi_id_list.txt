@@ -1,0 +1,81 @@
+148f 5572 rt2800usb /system/etc/modprobe.d/rt2800usb
+148f 5370 rt2800usb /system/etc/modprobe.d/rt2800usb
+0bda 8176 8192cu /system/etc/modprobe.d/8192cu /* 8188cu 1*1 dongole */
+0bda 8170 8192cu /system/etc/modprobe.d/8192cu /* 8188CE-VAU USB minCard */
+0bda 817e 8192cu /system/etc/modprobe.d/8192cu /* 8188CE-VAU USB minCard */
+0bda 817a 8192cu /system/etc/modprobe.d/8192cu /* 8188cu Slim Solo */
+0bda 817b 8192cu /system/etc/modprobe.d/8192cu /* 8188cu Slim Combo */
+0bda 817d 8192cu /system/etc/modprobe.d/8192cu /* 8188RU High-power USB Dongle */
+0bda 8754 8192cu /system/etc/modprobe.d/8192cu /* 8188 Combo for BC4 */
+0bda 817f 8192cu /system/etc/modprobe.d/8192cu /* 8188RU */
+0bda 818a 8192cu /system/etc/modprobe.d/8192cu /* RTL8188CUS-VL */
+0bda 018a 8192cu /system/etc/modprobe.d/8192cu /* RTL8188CTV */
+0bda 17c0 8192cu /system/etc/modprobe.d/8192cu /* RTK demoboard - USB-N10E */
+0bda 8177 8192cu /system/etc/modprobe.d/8192cu /* 8191cu 1*2 */
+0bda 8178 8192cu /system/etc/modprobe.d/8192cu /* 8192cu 2*2 */
+0bda 817c 8192cu /system/etc/modprobe.d/8192cu /* 8192CE-VAU USB minCard */
+0bda 8191 8192cu /system/etc/modprobe.d/8192cu /* 8192CU 2*2 */
+1058 0631 8192cu /system/etc/modprobe.d/8192cu /* Alpha, 8192CU */
+2019 ed17 8192cu /system/etc/modprobe.d/8192cu /* PCI - Edimax */
+0df6 0052 8192cu /system/etc/modprobe.d/8192cu /* Sitecom - Edimax */
+7392 7811 8192cu /system/etc/modprobe.d/8192cu /* Edimax - Edimax */
+07b8 8189 8192cu /system/etc/modprobe.d/8192cu /* Abocom - Abocom */
+0eb0 9071 8192cu /system/etc/modprobe.d/8192cu /* NO Brand - Etop */
+06f8 e033 8192cu /system/etc/modprobe.d/8192cu /* Hercules - Edimax */
+103c 1629 8192cu /system/etc/modprobe.d/8192cu /* HP - Lite-On ,8188CUS Slim Combo */
+2001 3308 8192cu /system/etc/modprobe.d/8192cu /* D-Link - Alpha */
+050d 1102 8192cu /system/etc/modprobe.d/8192cu /* Belkin - Edimax */
+2019 ab2a 8192cu /system/etc/modprobe.d/8192cu /* Planex - Abocom */
+20f4 648b 8192cu /system/etc/modprobe.d/8192cu /* TRENDnet - Cameo */
+4855 0090 8192cu /system/etc/modprobe.d/8192cu /*          - Feixun */
+13d3 3357 8192cu /system/etc/modprobe.d/8192cu /*          - AzureWave */
+0df6 005c 8192cu /system/etc/modprobe.d/8192cu /* Sitecom - Edimax */
+0bda 5088 8192cu /system/etc/modprobe.d/8192cu /* Thinkware - CC&C */
+4856 0091 8192cu /system/etc/modprobe.d/8192cu /* NetweeN - Feixun */
+0846 9041 8192cu /system/etc/modprobe.d/8192cu /* Netgear - Cameo */
+2019 4902 8192cu /system/etc/modprobe.d/8192cu /* Planex - Etop */
+2019 ab2e 8192cu /system/etc/modprobe.d/8192cu /* SW-WF02-AD15 -Abocom */
+2001 330b 8192cu /system/etc/modprobe.d/8192cu /* D-LINK - T&W */
+cdab 8010 8192cu /system/etc/modprobe.d/8192cu /* - - compare */
+0b05 17ba 8192cu /system/etc/modprobe.d/8192cu /* ASUS - Edimax */
+0bda 1e1e 8192cu /system/etc/modprobe.d/8192cu /* Intel - - */
+04bb 094c 8192cu /system/etc/modprobe.d/8192cu /* I-O DATA - Edimax */
+cdab 8011 8192cu /system/etc/modprobe.d/8192cu /* - - compare */
+0bda 0a8a 8192cu /system/etc/modprobe.d/8192cu /* Sony - Foxconn */
+0bda 317f 8192cu /system/etc/modprobe.d/8192cu /* Netcore,Netcore */
+13d3 3359 8192cu /system/etc/modprobe.d/8192cu /*  - Azwave */
+13d3 3358 8192cu /system/etc/modprobe.d/8192cu /*  - Azwave */
+04f2 aff7 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+04f2 aff9 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+04f2 affa 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+04f2 aff8 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+04f2 affb 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+04f2 affc 8192cu /system/etc/modprobe.d/8192cu /* XAVI - XAVI */
+2019 1201 8192cu /system/etc/modprobe.d/8192cu /* Planex - Vencer */
+2001 3307 8192cu /system/etc/modprobe.d/8192cu /* D-Link - Cameo */
+2001 330a 8192cu /system/etc/modprobe.d/8192cu /* D-Link - Alpha */
+2001 3309 8192cu /system/etc/modprobe.d/8192cu /* D-Link - Alpha */
+0586 341f 8192cu /system/etc/modprobe.d/8192cu /* Zyxel - Abocom */
+7392 7822 8192cu /system/etc/modprobe.d/8192cu /* Edimax - Edimax */
+2019 ab2b 8192cu /system/etc/modprobe.d/8192cu /* Planex - Abocom */
+07b8 8178 8192cu /system/etc/modprobe.d/8192cu /* Abocom - Abocom */
+07aa 0056 8192cu /system/etc/modprobe.d/8192cu /* ATKK - Gemtek */
+4855 0091 8192cu /system/etc/modprobe.d/8192cu /*      - Feixun */
+050d 2102 8192cu /system/etc/modprobe.d/8192cu /* Belkin - Sercomm */
+050d 2103 8192cu /system/etc/modprobe.d/8192cu /* Belkin - Edimax */
+20f4 624d 8192cu /system/etc/modprobe.d/8192cu /* TRENDnet */
+0df6 0061 8192cu /system/etc/modprobe.d/8192cu /* Sitecom - Edimax */
+0b05 17ab 8192cu /system/etc/modprobe.d/8192cu /* ASUS - Edimax */
+0846 9021 8192cu /system/etc/modprobe.d/8192cu /* Netgear - Sercomm */
+0846 f001 8192cu /system/etc/modprobe.d/8192cu /* Netgear - Sercomm */
+0e66 0019 8192cu /system/etc/modprobe.d/8192cu /* Hawking,Edimax */
+0e66 0020 8192cu /system/etc/modprobe.d/8192cu /* Hawking  - Edimax */
+050d 1004 8192cu /system/etc/modprobe.d/8192cu /* Belkin - Edimax */
+0bda 2e2e 8192cu /system/etc/modprobe.d/8192cu /* Intel - - */
+2357 0100 8192cu /system/etc/modprobe.d/8192cu /* TP-Link - TP-Link */
+06f8 e035 8192cu /system/etc/modprobe.d/8192cu /* Hercules - Edimax */
+04bb 0950 8192cu /system/etc/modprobe.d/8192cu /* IO-DATA - Edimax */
+0df6 0070 8192cu /system/etc/modprobe.d/8192cu /* Sitecom - Edimax */
+0789 016d 8192cu /system/etc/modprobe.d/8192cu /* LOGITEC - Edimax */
+0bda 8186 8192cu /system/etc/modprobe.d/8192cu /* Intel-Xavi( Azwave) */
+0bda 8812 8812au /system/etc/modprobe.d/8812au

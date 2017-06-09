@@ -1,0 +1,5 @@
+allow surfaceflinger sysfs:file write;
+allow surfaceflinger sysfs_xbmc:file {open read write};
+allow surfaceflinger system_control_service:service_manager find;
+
+set_prop(surfaceflinger, ctl_default_prop)

@@ -1,0 +1,61 @@
+# rild - radio interface layer daemon
+
+domain_auto_trans(rild, ppp_exec, ppp)
+
+allow rild self:netlink_route_socket nlmsg_write;
+allow rild kernel:system module_request;
+allow rild self:capability { setuid net_admin net_raw };
+allow rild alarm_device:chr_file rw_file_perms;
+allow rild cgroup:dir create_dir_perms;
+allow rild radio_device:chr_file rw_file_perms;
+allow rild radio_device:blk_file r_file_perms;
+allow rild mtd_device:dir search;
+allow rild efs_file:dir create_dir_perms;
+allow rild efs_file:file create_file_perms;
+allow rild shell_exec:file rx_file_perms;
+allow rild bluetooth_efs_file:file r_file_perms;
+allow rild bluetooth_efs_file:dir r_dir_perms;
+allow rild radio_data_file:dir rw_dir_perms;
+allow rild radio_data_file:file create_file_perms;
+allow rild sdcard_type:dir r_dir_perms;
+allow rild system_data_file:dir rw_dir_perms;
+allow rild system_data_file:fifo_file create_file_perms;
+allow rild system_file:file x_file_perms;
+allow rild system_file:file execute_no_trans;
+
+# property service
+allow rild radio_prop:property_service set;
+allow rild net_radio_prop:property_service set;
+allow rild system_radio_prop:property_service set;
+auditallow rild net_radio_prop:property_service set;
+auditallow rild system_radio_prop:property_service set;
+
+# Read/Write to uart driver (for GPS)
+allow rild gps_device:chr_file rw_file_perms;
+
+allow rild tty_device:chr_file rw_file_perms;
+
+# Allow rild to create and use netlink sockets.
+allow rild self:netlink_socket create_socket_perms;
+allow rild self:netlink_kobject_uevent_socket create_socket_perms;
+
+# Access to wake locks
+wakelock_use(rild)
+
+allow rild self:socket create_socket_perms;
+
+allow rild device:file create_file_perms;
+allow rild device:dir { open read };
+allow rild radio_device:file rw_file_perms;
+
+# Allow rild to read app /proc/pid dirs (b/10455872)
+allow rild proc:dir { open read search };
+allow rild ppp:dir { open read search };
+allow rild ppp:file { open read getattr };
+allow rild kernel:dir { search };
+allow rild kernel:file { open read getattr };
+allow rild init:dir { search };
+allow rild init:file { open read getattr };
+allow rild rild:dir { read open search };
+allow rild untrusted_app:dir { search };
+allow rild untrusted_app:file { open read getattr };

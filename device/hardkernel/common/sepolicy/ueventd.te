@@ -1,0 +1,1 @@
+allow ueventd drm_device:chr_file { create setattr } ;

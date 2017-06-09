@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">宽带拨号</string>
+    <string name="network_interface_list">网络接口</string>        
+    <string name="menu_cancel">取消</string>
+    <string name="pppoe_conf_perf_title">宽带拨号配置</string>
+    <string name="pppoe_config_title">宽带拨号配置</string>
+    <string name="pppoe_user_name">用户帐号</string>
+    <string name="pppoe_passwd">密码</string>
+    <string name="pppoe_dial">拨号</string>
+    <string name="pppoe_disconnect">断开</string>
+    <string name="pppoe_dial_waiting_msg">正在拨号,请稍等...</string>
+    <string name="pppoe_hangup_waiting_msg">正在断开拨号,请稍等...</string>
+    <string name="pppoe_conf_summary">宽带拨号配置</string>
+    <string name="pppoe_connect_ok">宽带拨号成功</string>
+    <string name="pppoe_connect_failed">宽带拨号失败</string>
+    <string name="pppoe_connect_failed_server_no_response">服务器未响应</string>
+    <string name="pppoe_connect_failed_auth">无效的用户名或密码</string>    
+    <string name="pppoe_disconnect_ok">宽带拨号断开成功</string>
+    <string name="pppoe_disconnect_failed">宽带拨号断开失败</string>
+    <string name="pppoe_ppp_interface_occupied">ppp接口被占用</string>
+    <string name="amlogic_ok">确定</string>
+    <string name="pppoe_auto_dial">开机自动拨号</string>
+    <string name="please_insert_the_cable">请插入网线</string>
+</resources>

@@ -1,0 +1,7 @@
+/system/lib/modules/backports/compat.ko
+/system/lib/modules/backports/cfg80211.ko
+/system/lib/modules/backports/mac80211.ko
+/system/lib/modules/backports/rt2x00lib.ko
+/system/lib/modules/backports/rt2x00usb.ko
+/system/lib/modules/backports/rt2800lib.ko
+/system/lib/modules/backports/rt2800usb.ko

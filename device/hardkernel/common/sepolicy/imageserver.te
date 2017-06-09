@@ -1,0 +1,40 @@
+type imageserver, domain;
+type imageserver_exec, exec_type, file_type;
+type picture_device, dev_type;
+
+init_daemon_domain(imageserver)
+
+allow imageserver shell_exec:file rx_file_perms;
+allow imageserver system_file:file execute_no_trans;
+
+allow imageserver imageserver_service:service_manager add;
+
+allow imageserver imageserver_exec:file { entrypoint read };
+
+allow imageserver self:process execmem;
+
+binder_use(imageserver);
+binder_call(imageserver, binderservicedomain)
+binder_call(imageserver, appdomain)
+binder_service(imageserver)
+
+allow imageserver self:capability dac_override;
+allow imageserver self:capability dac_read_search;
+
+#allow imageserver picture_device:blk_file rw_file_perms;
+allow imageserver picture_device:chr_file rw_file_perms;
+
+#allow imageserver dev_type:chr_file { create setattr unlink };
+#allow imageserver dev_type:blk_file { create setattr unlink };
+
+#allow imageserver appdomain:file { r_file_perms };
+allow imageserver fuse:dir r_dir_perms;
+allow imageserver fuse:file r_file_perms;
+allow imageserver app_data_file:file rw_file_perms;
+allow imageserver system_file:file execmod;
+
+allow imageserver system_control_service:service_manager find;
+
+allow imageserver { mnt_user_file storage_file }:dir { getattr search };
+allow imageserver { mnt_user_file storage_file }:lnk_file { getattr read };
+allow imageserver permission_service:service_manager find;

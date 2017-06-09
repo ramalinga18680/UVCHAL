@@ -1,0 +1,17 @@
+# NTFS
+type fuseblk, sdcard_type, fs_type;
+type hfsplus, sdcard_type, fs_type;
+type iso9660, sdcard_type, fs_type;
+type udf,sdcard_type, fs_type;
+type proc_mounts, fs_type;
+
+type pppoe_wrapper_socket, file_type;
+
+# XBMC
+type sysfs_xbmc, fs_type, sysfs_type;
+
+#optee
+type drm_device, fs_type,sysfs_type;
+
+#dig_socket
+type dig_socket, file_type;

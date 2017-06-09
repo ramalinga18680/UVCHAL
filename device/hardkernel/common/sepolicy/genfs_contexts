@@ -1,0 +1,5 @@
+genfscon fuseblk / u:object_r:fuseblk:s0
+genfscon hfsplus / u:object_r:hfsplus:s0
+genfscon iso9660 / u:object_r:iso9660:s0
+genfscon udf     / u:object_r:udf:s0
+genfscon proc /mounts u:object_r:proc_mounts:s0

@@ -1,0 +1,9 @@
+type make_ext4fs, domain;
+type make_ext4fs_exec, exec_type, file_type;
+init_daemon_domain(make_ext4fs)
+
+allow make_ext4fs devpts:chr_file { read write getattr ioctl };
+allow make_ext4fs devpts:dir { search };
+
+allow make_ext4fs block_device:dir { search getattr };
+allow make_ext4fs swap_block_device:blk_file rw_file_perms;

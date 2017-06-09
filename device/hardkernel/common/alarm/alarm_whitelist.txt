@@ -1,0 +1,5 @@
+com.farcore.AutoSuspend
+com.android.deskclock
+ccc71.bmw.pro
+com.amlogic.tvservice
+
